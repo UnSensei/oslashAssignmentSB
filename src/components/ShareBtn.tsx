@@ -1,4 +1,5 @@
 import React from "react";
+import { IconBtn } from "./Icon";
 import "./shareBtn.css";
 
 interface ButtonProps {
@@ -22,31 +23,33 @@ interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * custom style object
+   */
+  customStyle?: object;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const ShareBtn = ({
-  primary = false,
-  size = "medium",
+  primary = true,
   backgroundColor,
   label,
+  customStyle,
   ...props
 }: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+  const mode = primary ? "share-button--primary" : "share-button--secondary";
+  console.log(props, "loler");
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
-      style={{ backgroundColor }}
+      className={["share-button", mode].join(" ")}
+      style={customStyle}
       {...props}
     >
       {label}
+      <IconBtn margin={"0px 10px"} color="white" size={20} />
     </button>
   );
 };

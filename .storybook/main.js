@@ -7,6 +7,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/preset-create-react-app",
+    "@chakra-ui/storybook-addon",
     // {
     //   name: "@storybook/addon-postcss",
     //   options: {
@@ -22,6 +23,9 @@ module.exports = {
     //   },
     // },
   ],
+  features: {
+    emotionAlias: false,
+  },
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\,css&/,

@@ -11,6 +11,9 @@ import {
   PopoverAnchor,
   Button,
   Switch,
+  Input,
+  InputGroup,
+  InputRightAddon,
 } from "@chakra-ui/react";
 import { IconBtn } from "../Icon";
 
@@ -32,8 +35,8 @@ export const PopoverCP = () => {
           Share <IconBtn margin={"0px 10px"} color="white" size={20} />
         </Button>
       </PopoverTrigger>
-      <PopoverContent>
-        <PopoverHeader className="flex justify-between items-center">
+      <PopoverContent className="">
+        <PopoverHeader className="flex justify-between items-center px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -55,10 +58,34 @@ export const PopoverCP = () => {
               Publish and share link with anyone
             </span>
           </div>
-          <Switch className="ml-auto" />
+          <Switch className="" />
         </PopoverHeader>
-        <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
-        <PopoverFooter className="flex justify-between py-6">
+        <PopoverBody className="px-2">
+          {/* <InputGroup className="flex flex-row items-center rounded-md my-4 border  hover:border-indigo-500 border-gray-200">
+            <Input
+              focusBorderColor="border-gray-200"
+              className="rounded-l-md rounded-none cursor-pointer border-1 border-gray-200"
+              placeholder="People, emails, groups"
+            />
+            <InputRightAddon
+              _after={{ boxShadow: "none" }}
+              _focus={{ boxShadow: "none" }}
+              className="cursor-pointer border-none border-gray-200"
+              children="Invite"
+            />
+          </InputGroup> */}
+          <div className="flex flex-row items-center rounded-md my-4 border  hover:border-indigo-500 border-gray-200">
+            <input
+              type="text"
+              placeholder="People, emails, groups"
+              className="grow px-2 py-2 outline-none rounded-l-md cursor-pointer"
+            ></input>
+            <button className="grow-0 px-3 py-2 border-l border-gray-200 rounded-r-md bg-[#f9fafb]">
+              Invite
+            </button>
+          </div>
+        </PopoverBody>
+        <PopoverFooter className="flex justify-between py-6 px-2">
           <div className="flex">
             <svg
               xmlns="http://www.w3.org/2000/svg"

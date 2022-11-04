@@ -16,8 +16,17 @@ import {
   InputRightAddon,
 } from "@chakra-ui/react";
 import { IconBtn } from "../Icon";
+import { InviteSurface } from "../invites/InviteSurface";
+import { invitedList } from "../../data";
 
-export const PopoverCP = () => {
+interface PopoverProps {
+  /**
+   * available access levels
+   */
+  accessLevels: Array<string>;
+}
+
+export const PopoverCP = ({ accessLevels }: PopoverProps) => {
   const [showSharePopover, setShowSharePopover] = useState(false);
   return (
     <Popover
@@ -84,6 +93,8 @@ export const PopoverCP = () => {
               Invite
             </button>
           </div>
+
+          <InviteSurface accessLevels={accessLevels} data={invitedList} />
         </PopoverBody>
         <PopoverFooter className="flex justify-between py-6 px-2">
           <div className="flex">

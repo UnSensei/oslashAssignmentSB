@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { access } from "../../data";
 import { SharePopover } from "../popover";
 import { ShareBtn } from "../ShareBtn";
 

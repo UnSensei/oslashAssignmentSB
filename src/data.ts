@@ -46,10 +46,10 @@ export const access = ["Full access", "Can edit", "Can View", "No access"];
 
 export const invitedList: {
   name: string;
-  imgSrc: string;
+  imgSrc?: string;
   id: string;
   email: string;
-  access: string;
+  access?: string;
   members?: number;
 }[] = [
   {

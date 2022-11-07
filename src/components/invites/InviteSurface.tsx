@@ -20,14 +20,12 @@ interface inviteProps {
 }
 
 export const InviteSurface = ({ data, accessLevels }: inviteProps) => {
-  const updateAccess = (level: string, index: number) => {
-    console.log(level, "in surface", index);
-    data[index].access = level;
+  const updateAccess = (level: string, index?: number) => {
+    if (typeof index !== "undefined") data[index].access = level;
   };
   return (
     <>
       {data.map((invite, index) => {
-        console.log(data, "data");
         return (
           <div className="flex flex-row items-center justify-between mt-3">
             <div className="flex flex-row items-center grow">

@@ -9,7 +9,6 @@ export const Share = ({}: ShareProps) => {
   const [openSharePopover, setOpenSharePopover] = useState(false);
 
   const clickShareBtn = () => {
-    console.log(openSharePopover, "hahah");
     setOpenSharePopover(true);
   };
 

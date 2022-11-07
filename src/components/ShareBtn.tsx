@@ -40,7 +40,6 @@ export const ShareBtn = ({
   ...props
 }: ButtonProps) => {
   const mode = primary ? "share-button--primary" : "share-button--secondary";
-  console.log(props, "loler");
   return (
     <button
       type="button"

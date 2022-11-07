@@ -1,15 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  Button,
-} from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 interface MenuProps {
   /**
@@ -27,11 +17,11 @@ interface MenuProps {
   /**
    * function to update access level
    */
-  setAccess: (level: string, inviteIndex: number) => void;
+  setAccess: (level: string, inviteIndex?: number) => void;
   /**
    * invitee index
    */
-  inviteIndex: number;
+  inviteIndex?: number;
 }
 
 export const AccessMenu = ({
@@ -79,7 +69,12 @@ export const AccessMenu = ({
         </MenuButton>
         <MenuList>
           {accessLevels.map((level) => (
-            <MenuItem className="text-sm" onClick={() => setAccessLevel(level)}>
+            <MenuItem
+              className={`text-sm ${
+                level === "No access" ? "text-red-600" : "text-gray-500"
+              }`}
+              onClick={() => setAccessLevel(level)}
+            >
               {level}
             </MenuItem>
           ))}

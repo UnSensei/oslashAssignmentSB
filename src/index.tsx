@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { AppState } from "./Shared/context";
 
+/**
+ * Chakra UI theme overrides for colors,
+ * make custom changes to components
+ */
 const theme = extendTheme({
   colors: {
     mygray: {
@@ -27,6 +32,7 @@ const theme = extendTheme({
           content: {
             maxWidth: "unset",
             width: "unset",
+            minWidth: "500px",
           },
         },
       },
@@ -38,11 +44,14 @@ const theme = extendTheme({
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <App />
-    </ChakraProvider>
+    <AppState>
+      <ChakraProvider theme={theme}>
+        <App />
+      </ChakraProvider>
+    </AppState>
   </React.StrictMode>
 );
 

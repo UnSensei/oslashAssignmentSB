@@ -31,7 +31,10 @@ export const InviteSurface = ({ data, accessLevels }: inviteProps) => {
             <div className="flex flex-row items-center grow">
               <img
                 className="w-10 h-10 rounded-full object-contain"
-                src={invite.imgSrc}
+                src={
+                  invite.imgSrc ||
+                  `https://ui-avatars.com/api/?name=${invite.name}`
+                }
                 alt="oslash"
               />
               <div className="flex flex-col items-start mx-2">

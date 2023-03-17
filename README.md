@@ -1,5 +1,10 @@
 App hosted here =>> https://dulcet-liger-5806cb.netlify.app/  
 
+Created this project as an assignment over a few days. A share widget that lets you invite team members and groups at your work place. 
+
+
+
+
 
 # Getting Started with Create React App
 
